@@ -1,0 +1,1 @@
+create table USUARIO(id integer,name varchar2(30),lastname varchar2(30));
