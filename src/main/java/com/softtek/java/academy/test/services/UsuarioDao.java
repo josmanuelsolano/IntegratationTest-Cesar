@@ -6,4 +6,5 @@ public interface UsuarioDao {
 
 	int getUsuarioCount();
 	Usuario getUsuarioById(int id);
+	void addUser(Usuario usuario);
 }

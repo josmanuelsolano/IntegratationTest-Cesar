@@ -3,6 +3,7 @@ package com.softtek.java.academy.test.services;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -26,8 +27,15 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	public Usuario getUsuarioById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Usuario usuario = (Usuario)jdbcTemplate.queryForObject(
+				"SELECT * FROM USUARIO WHERE id = ?",new Object[] {id},
+				new BeanPropertyRowMapper<Usuario>(Usuario.class));
+		return usuario;
+	}
+
+	public void addUser(Usuario usuario) {
+		jdbcTemplate.update("INSERT INTO USUARIO (id, name, lastname) VALUES (?, ?, ?)",
+				new Object[] { usuario.getId(),usuario.getName(),usuario.getLastname()});
 	}
 
 	

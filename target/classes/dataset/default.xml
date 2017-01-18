@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <dataset>
 	<USUARIO ID="1" NAME="manuel" LASTNAME="solano"></USUARIO>
+	
+	<USUARIO_ATTEMP ID_USUARIO="1" COUNTER="1"></USUARIO_ATTEMP>
 </dataset>
